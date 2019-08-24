@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>NWU-3D-MAP - MiloLab</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+  <script src="TemplateData/UnityProgress.js"></script>
+  <script src="Build/UnityLoader.js"></script>
+  <script>
+    var unityInstance = UnityLoader.instantiate("unityContainer", "Build/build0.2.json", {
+      onProgress: UnityProgress
+    });
+  </script>
+</head>
+
+<body>
+  <div class="webgl-content">
+    <div id="unityContainer" style="width: 1280px; height: 720px"></div>
+    <div class="footer">
+      <div class="webgl-logo"></div>
+      <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+      <div class="title">NWU-3D-MAP</div>
+    </div>
+  </div>
+  <div id="hover"
+    style="position: fixed;z-index: 5;border: 1px solid black;text-align: center;border-radius: 10px;left: 35%;top: 30%;padding: 20px;background-color: white;">
+    <h3>欢迎使用西北大学在线3D地图</h3>
+    <ul style="line-height: 1.5em;">
+      <li>本“地图”并未使用真实尺寸建模，仅供学习参考交流使用</li>
+      <li>请尽量使用电脑访问本站</li>
+      <li>操作方式：鼠标左键拖动旋转视图，滚轮缩放，左键点击中心显示</li>
+      <li>如有bug请截图附说明发送至<a href="mailto:milowang2048@foxmail.com">milowang2048@foxmail.com</a></li>
+      <li>当前版本为pre-alpha 0.5</li>
+      <button id="confirm">确定</button>
+    </ul>
+  </div>
+  <script>
+    document.getElementById("confirm").onclick = function () {
+      document.getElementById("hover").hidden = true;
+    }
+  </script>
+</body>
+
+</html>
